@@ -1,0 +1,12 @@
+{
+  "item.truespace.aluminum_ingot": "Алюминиевый слиток",
+  "itemGroup.truespace": "True Space",
+  "truespace.configuration.lifeSupport": "Жизнеобеспечение",
+  "truespace.configuration.radiation": "Ионизирующее излучение",
+  "truespace.configuration.realDataTooltips": "Показывать реальные данные в подсказках",
+  "truespace.configuration.realisticMaterials": "Реалистичные цепочки материалов",
+  "truespace.configuration.realisticRocketry": "Реалистичная ракетная физика",
+  "truespace.configuration.section.truespace.common.toml": "Настройки True Space Mod",
+  "truespace.configuration.section.truespace.common.toml.title": "Настройки True Space Mod",
+  "truespace.configuration.title": "Настройки True Space Mod"
+}

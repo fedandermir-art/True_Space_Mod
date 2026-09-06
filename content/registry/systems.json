@@ -1,0 +1,23 @@
+{
+  "category": "systems",
+  "description": "Cross-cutting game systems (power, pressure, heat...). Not single items, but the rules they follow.",
+  "entries": {
+    "electric_power": {
+      "id": "electric_power",
+      "type": "system",
+      "status": "designed",
+      "tier": "early",
+      "name": { "en": "Electric Power", "ru": "Электричество" },
+      "description": {
+        "en": "Realistic electricity: voltage, current and power (P = V x I). Machines have real power draws and voltage requirements.",
+        "ru": "Реалистичное электричество: напряжение, ток и мощность (P = V × I). У машин реальные потребляемые мощности и требования по напряжению."
+      },
+      "tags": ["power", "electricity"],
+      "realWorld": {
+        "basis": "P = V * I. Real anchors: Hall-Heroult needs ~13-15 kWh per kg Al at ~4-5 V huge current; an ion thruster is power-limited, a home is ~kW, a launch pad ~MW.",
+        "source": "https://en.wikipedia.org/wiki/Electric_power"
+      },
+      "related": ["hall_heroult_cell", "water_electrolyzer", "ion_engine"]
+    }
+  }
+}

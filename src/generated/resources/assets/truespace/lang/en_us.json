@@ -1,0 +1,12 @@
+{
+  "item.truespace.aluminum_ingot": "Aluminium Ingot",
+  "itemGroup.truespace": "True Space",
+  "truespace.configuration.lifeSupport": "Life support",
+  "truespace.configuration.radiation": "Ionizing radiation",
+  "truespace.configuration.realDataTooltips": "Show real-world data in tooltips",
+  "truespace.configuration.realisticMaterials": "Realistic material chains",
+  "truespace.configuration.realisticRocketry": "Realistic rocketry",
+  "truespace.configuration.section.truespace.common.toml": "True Space Mod Configs",
+  "truespace.configuration.section.truespace.common.toml.title": "True Space Mod Configs",
+  "truespace.configuration.title": "True Space Mod Configs"
+}

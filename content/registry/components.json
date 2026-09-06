@@ -1,0 +1,25 @@
+{
+  "category": "components",
+  "description": "Engineered parts that go into larger assemblies (engines, pumps, avionics, tanks, life-support units).",
+  "entries": {
+    "ion_engine": {
+      "id": "ion_engine",
+      "type": "component",
+      "status": "planned",
+      "tier": "late",
+      "name": { "en": "Ion Thruster", "ru": "Ионный двигатель" },
+      "description": {
+        "en": "Electrostatic thruster on xenon: extremely high Isp, minuscule thrust. For station-keeping and long slow transfers.",
+        "ru": "Электростатический двигатель на ксеноне: крайне высокий удельный импульс, ничтожная тяга. Для коррекций и долгих перелётов."
+      },
+      "tags": ["engine", "electric", "high-isp"],
+      "realWorld": {
+        "basis": "Gridded ion thrusters (e.g. NSTAR, NEXT): Isp 2000-4000+ s, thrust millinewtons to newtons, power-limited.",
+        "source": "https://en.wikipedia.org/wiki/Ion_thruster",
+        "data": { "ispVacS": "2000-4000" }
+      },
+      "depends": ["xenon"],
+      "related": ["xenon", "electric_power"]
+    }
+  }
+}

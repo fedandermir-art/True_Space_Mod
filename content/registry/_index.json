@@ -1,0 +1,32 @@
+{
+  "$comment": "Index of the registry. Keep in sync with the category files; a future tools/registry_stats.py will regenerate it automatically.",
+  "categories": {
+    "components": {
+      "file": "components.json",
+      "count": 1
+    },
+    "fluids": {
+      "file": "fluids.json",
+      "count": 9
+    },
+    "machines": {
+      "file": "machines.json",
+      "count": 8
+    },
+    "materials": {
+      "file": "materials.json",
+      "count": 9
+    },
+    "systems": {
+      "file": "systems.json",
+      "count": 1
+    }
+  },
+  "status": {
+    "implemented": 1,
+    "designed": 9,
+    "planned": 18,
+    "placeholder": 0
+  },
+  "total": 28
+}
