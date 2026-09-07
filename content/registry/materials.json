@@ -176,6 +176,23 @@
         "data": { "ironContentPct": 62 }
       },
       "related": ["blast_furnace", "steel"]
+    },
+    "primamateria": {
+      "id": "primamateria",
+      "type": "material",
+      "status": "planned",
+      "tier": "endgame",
+      "name": { "en": "Prima Materia (Omega Isomer)", "ru": "Праматерия (Омега-изомер)" },
+      "description": {
+        "en": "Synthetic metastable nuclear isomer: a nucleus storing enormous energy, releasable on command. The one major speculative element of the lore (see docs/lore/tech.md). In its controlled mirror mode it catalyses transmutation of long-lived radionuclides into stable ones.",
+        "ru": "Синтетический метастабильный ядерный изомер: ядро, хранящее огромную энергию и отдающее её по команде. Единственное крупное фантастическое допущение лора (см. docs/lore/tech.md). В управляемом «зеркальном» режиме катализирует превращение долгоживущих радионуклидов в стабильные."
+      },
+      "tags": ["lore", "isomer", "endgame", "hypothetical"],
+      "realWorld": {
+        "basis": "Nuclear isomers are real (Ta-180m stable; Hf-178m2 ~2.4 MeV, 31 y, studied by DARPA). Prima Materia is a hypothetical synthetic isomer with far higher stored energy and external triggering.",
+        "source": "https://en.wikipedia.org/wiki/Nuclear_isomer",
+        "data": { "status": "hypothetical", "analogueIsomers": "Ta-180m, Hf-178m2" }
+      }
     }
   }
 }
