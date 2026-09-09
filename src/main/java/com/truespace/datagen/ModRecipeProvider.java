@@ -1,14 +1,10 @@
 package com.truespace.datagen;
 
-import com.truespace.init.ModItems;
 import java.util.concurrent.CompletableFuture;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.world.item.Items;
 
 /**
  * Generates {@code data/truespace/recipe/*.json}.
@@ -17,6 +13,11 @@ import net.minecraft.world.item.Items;
  * E.g. aluminium comes from alumina by Hall-Héroult electrolysis inside a
  * machine, <i>not</i> from a crafting table. Crafting-table recipes are only
  * for real assembly steps (parts into components).
+ *
+ * <p>No recipes are generated yet: the bauxite → aluminium chain is driven by
+ * machines (crusher, Bayer digester, Hall-Héroult cell) that arrive with their
+ * own recipe types in the next milestone. Any crafting-table recipe added here
+ * from now on must be a real assembly step.
  */
 public class ModRecipeProvider extends RecipeProvider {
 
@@ -26,17 +27,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes(RecipeOutput output) {
-        // ------------------------------------------------------------------
-        // TEMPORARY placeholder recipe — proves the datagen -> recipe pipeline.
-        // Will be REPLACED by the aluminium production chain in milestone 2
-        // (bauxite -> alumina via Bayer process -> aluminium via electrolysis).
-        // No unlock criterion on purpose, so the committed generated output
-        // matches `runData` exactly (no auto-generated advancement file).
-        // ------------------------------------------------------------------
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ALUMINUM_INGOT.get(), 1)
-                .pattern("II")
-                .pattern("II")
-                .define('I', Items.IRON_INGOT)
-                .save(output);
+        // TODO(milestone): machine recipes (crusher, Bayer, Hall-Héroult) —
+        // they need custom recipe types, which land together with the machines.
     }
 }

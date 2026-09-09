@@ -1,6 +1,7 @@
 package com.truespace.init;
 
 import com.truespace.TrueSpaceMod;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -11,8 +12,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
  * cross-checked against the code.
  *
  * <p>Rule of the project: every item added here MUST also have an entry in
- * {@code content/registry/items.json} (or its category file) with real-world
- * data and a source. Content without a real basis does not ship.
+ * {@code content/registry/} with real-world data and a source. Content without
+ * a real basis does not ship.
  */
 public final class ModItems {
 
@@ -20,17 +21,41 @@ public final class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(TrueSpaceMod.MODID);
 
     // ==================================================================
-    // Materials — metals (milestone 2 will build the full chain behind them)
+    // Metals
     // ==================================================================
 
     /**
-     * Proof-of-pipeline item and the first real material of the mod.
-     * Eventually produced by Hall-Héroult electrolysis of alumina, not by hand.
+     * The first real metal of the mod.
+     * Produced by Hall-Héroult electrolysis of alumina — not by hand.
      * See {@code content/registry/materials.json}.
      */
     public static final DeferredItem<Item> ALUMINUM_INGOT = ITEMS.registerSimpleItem("aluminum_ingot");
 
-    // TODO(milestone 2): titanium, steel, copper, ... with their full realistic chains.
+    // ==================================================================
+    // Bauxite → aluminium chain (Phase 1)
+    // ==================================================================
+
+    /** Bauxite reduced to size by the crusher — first beneficiation step. */
+    public static final DeferredItem<Item> CRUSHED_BAUXITE = ITEMS.registerSimpleItem("crushed_bauxite");
+
+    /** Refined aluminium oxide; the Hall-Héroult feedstock. */
+    public static final DeferredItem<Item> ALUMINA = ITEMS.registerSimpleItem("alumina");
+
+    /** Molten-salt electrolyte that dissolves alumina (Na3AlF6). */
+    public static final DeferredItem<Item> CRYOLITE = ITEMS.registerSimpleItem("cryolite");
+
+    /** Consumable electrode; burns to CO2 during electrolysis. */
+    public static final DeferredItem<Item> CARBON_ANODE = ITEMS.registerSimpleItem("carbon_anode");
+
+    /** Caustic by-product of the Bayer process (hazardous waste). */
+    public static final DeferredItem<Item> RED_MUD = ITEMS.registerSimpleItem("red_mud");
+
+    // ==================================================================
+    // Ore block items (blocks themselves live in ModBlocks)
+    // ==================================================================
+
+    public static final DeferredItem<BlockItem> BAUXITE_ORE =
+            ITEMS.registerSimpleBlockItem("bauxite_ore", ModBlocks.BAUXITE_ORE);
 
     private ModItems() {
     }

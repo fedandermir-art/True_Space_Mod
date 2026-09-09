@@ -23,7 +23,14 @@ public final class ModCreativeTabs {
                     .withTabsBefore(CreativeModeTabs.COMBAT)
                     .icon(() -> ModItems.ALUMINUM_INGOT.get().getDefaultInstance())
                     .displayItems((parameters, output) -> {
+                        // Bauxite → aluminium chain, in processing order.
+                        output.accept(ModBlocks.BAUXITE_ORE.get());
+                        output.accept(ModItems.CRUSHED_BAUXITE.get());
+                        output.accept(ModItems.ALUMINA.get());
+                        output.accept(ModItems.CRYOLITE.get());
+                        output.accept(ModItems.CARBON_ANODE.get());
                         output.accept(ModItems.ALUMINUM_INGOT.get());
+                        output.accept(ModItems.RED_MUD.get());
                     })
                     .build());
 

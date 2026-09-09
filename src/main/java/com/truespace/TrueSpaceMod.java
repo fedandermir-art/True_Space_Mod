@@ -1,5 +1,6 @@
 package com.truespace;
 
+import com.truespace.init.ModBlocks;
 import com.truespace.init.ModCreativeTabs;
 import com.truespace.init.ModItems;
 import net.neoforged.bus.api.IEventBus;
@@ -39,6 +40,7 @@ public class TrueSpaceMod {
      */
     public TrueSpaceMod(IEventBus modEventBus, ModContainer modContainer) {
         // Register our DeferredRegisters on the mod event bus.
+        ModBlocks.BLOCKS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
         ModCreativeTabs.TABS.register(modEventBus);
 

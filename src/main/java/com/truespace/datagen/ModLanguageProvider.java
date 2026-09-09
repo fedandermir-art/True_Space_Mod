@@ -29,8 +29,16 @@ public class ModLanguageProvider extends LanguageProvider {
         // Creative tab
         add("itemGroup.truespace", "True Space");
 
+        // Blocks
+        add("block.truespace.bauxite_ore", "Bauxite Ore");
+
         // Items
         add("item.truespace.aluminum_ingot", "Aluminium Ingot");
+        add("item.truespace.crushed_bauxite", "Crushed Bauxite");
+        add("item.truespace.alumina", "Alumina");
+        add("item.truespace.cryolite", "Cryolite");
+        add("item.truespace.carbon_anode", "Carbon Anode");
+        add("item.truespace.red_mud", "Red Mud");
 
         // Config screen
         add("truespace.configuration.title", "True Space Mod Configs");
@@ -46,7 +54,14 @@ public class ModLanguageProvider extends LanguageProvider {
     private void addRu() {
         add("itemGroup.truespace", "True Space");
 
+        add("block.truespace.bauxite_ore", "Бокситовая руда");
+
         add("item.truespace.aluminum_ingot", "Алюминиевый слиток");
+        add("item.truespace.crushed_bauxite", "Дроблёный боксит");
+        add("item.truespace.alumina", "Глинозём");
+        add("item.truespace.cryolite", "Криолит");
+        add("item.truespace.carbon_anode", "Угольный анод");
+        add("item.truespace.red_mud", "Красный шлам");
 
         add("truespace.configuration.title", "Настройки True Space Mod");
         add("truespace.configuration.section.truespace.common.toml", "Настройки True Space Mod");

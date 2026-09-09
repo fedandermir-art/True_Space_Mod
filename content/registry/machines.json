@@ -27,7 +27,7 @@
         "machine": "crusher",
         "inputs": [
           {
-            "item": "bauxite",
+            "item": "bauxite_ore",
             "amount": 1
           }
         ],

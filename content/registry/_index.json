@@ -1,6 +1,10 @@
 {
   "$comment": "Index of the registry. Keep in sync with the category files; a future tools/registry_stats.py will regenerate it automatically.",
   "categories": {
+    "blocks": {
+      "file": "blocks.json",
+      "count": 1
+    },
     "components": {
       "file": "components.json",
       "count": 1
@@ -15,7 +19,7 @@
     },
     "materials": {
       "file": "materials.json",
-      "count": 10
+      "count": 14
     },
     "mobs": {
       "file": "mobs.json",
@@ -27,10 +31,10 @@
     }
   },
   "status": {
-    "implemented": 1,
-    "designed": 9,
+    "implemented": 8,
+    "designed": 7,
     "planned": 21,
     "placeholder": 0
   },
-  "total": 31
+  "total": 36
 }

@@ -1,0 +1,33 @@
+{
+  "category": "blocks",
+  "description": "Placed blocks of the mod. Each carries its real-world basis and lore role.",
+  "entries": {
+    "bauxite_ore": {
+      "id": "bauxite_ore",
+      "type": "block",
+      "status": "implemented",
+      "tier": "early",
+      "name": {
+        "en": "Bauxite Ore",
+        "ru": "Бокситовая руда"
+      },
+      "description": {
+        "en": "Surface ore block of bauxite; mined with any pickaxe. The crusher reduces it to crushed bauxite.",
+        "ru": "Поверхностный рудный блок боксита; добывается любой киркой. Дробилка превращает его в дроблёный боксит."
+      },
+      "tags": [
+        "ore",
+        "aluminium",
+        "surface"
+      ],
+      "realWorld": {
+        "basis": "Bauxite is a surficial laterite formed by tropical weathering — hence near-surface generation in the mod.",
+        "source": "https://en.wikipedia.org/wiki/Bauxite"
+      },
+      "related": [
+        "bauxite",
+        "crusher"
+      ]
+    }
+  }
+}

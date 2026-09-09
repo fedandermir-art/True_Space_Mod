@@ -1,5 +1,11 @@
 {
+  "block.truespace.bauxite_ore": "Bauxite Ore",
+  "item.truespace.alumina": "Alumina",
   "item.truespace.aluminum_ingot": "Aluminium Ingot",
+  "item.truespace.carbon_anode": "Carbon Anode",
+  "item.truespace.crushed_bauxite": "Crushed Bauxite",
+  "item.truespace.cryolite": "Cryolite",
+  "item.truespace.red_mud": "Red Mud",
   "itemGroup.truespace": "True Space",
   "truespace.configuration.lifeSupport": "Life support",
   "truespace.configuration.radiation": "Ionizing radiation",
