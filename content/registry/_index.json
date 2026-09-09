@@ -11,11 +11,15 @@
     },
     "machines": {
       "file": "machines.json",
-      "count": 8
+      "count": 9
     },
     "materials": {
       "file": "materials.json",
       "count": 10
+    },
+    "mobs": {
+      "file": "mobs.json",
+      "count": 1
     },
     "systems": {
       "file": "systems.json",
@@ -25,8 +29,8 @@
   "status": {
     "implemented": 1,
     "designed": 9,
-    "planned": 19,
+    "planned": 21,
     "placeholder": 0
   },
-  "total": 29
+  "total": 31
 }

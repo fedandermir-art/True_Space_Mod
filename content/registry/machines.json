@@ -7,188 +7,448 @@
       "type": "machine",
       "status": "planned",
       "tier": "early",
-      "name": { "en": "Ore Crusher", "ru": "Дробилка руды" },
+      "name": {
+        "en": "Ore Crusher",
+        "ru": "Дробилка руды"
+      },
       "description": {
         "en": "First step of beneficiation: size reduction to liberate mineral grains for concentration.",
         "ru": "Первый этап обогащения: измельчение для высвобождения зёрен минерала перед концентрацией."
       },
-      "tags": ["processing", "beneficiation"],
+      "tags": [
+        "processing",
+        "beneficiation"
+      ],
       "realWorld": {
         "basis": "Comminution (crushing + grinding) is the most energy-hungry step of mineral processing.",
         "source": "https://en.wikipedia.org/wiki/Comminution"
       },
       "recipe": {
         "machine": "crusher",
-        "inputs": [ { "item": "bauxite", "amount": 1 } ],
-        "outputs": [ { "item": "crushed_bauxite", "amount": 1 } ],
+        "inputs": [
+          {
+            "item": "bauxite",
+            "amount": 1
+          }
+        ],
+        "outputs": [
+          {
+            "item": "crushed_bauxite",
+            "amount": 1
+          }
+        ],
         "note": "Generic: every ore passes through crushing before concentration."
       },
-      "related": ["bauxite", "ilmenite"]
+      "related": [
+        "bauxite",
+        "ilmenite"
+      ]
     },
     "bayer_digester": {
       "id": "bayer_digester",
       "type": "machine",
       "status": "planned",
       "tier": "early",
-      "name": { "en": "Bayer Process Digester", "ru": "Автоклав процесса Байера" },
+      "name": {
+        "en": "Bayer Process Digester",
+        "ru": "Автоклав процесса Байера"
+      },
       "description": {
         "en": "Digests bauxite in hot sodium hydroxide to dissolve alumina, leaving red mud behind.",
         "ru": "Обрабатывает боксит горячим раствором едкого натра, растворяя глинозём и оставляя красный шлам."
       },
-      "tags": ["chemistry", "aluminium"],
+      "tags": [
+        "chemistry",
+        "aluminium"
+      ],
       "realWorld": {
         "basis": "Bayer process: NaOH digestion at ~150-250 C, precipitation of Al(OH)3, then calcination to Al2O3.",
         "source": "https://en.wikipedia.org/wiki/Bayer_process"
       },
       "recipe": {
         "machine": "bayer_digester",
-        "inputs": [ { "item": "crushed_bauxite", "amount": 4 }, { "item": "sodium_hydroxide", "amount": 1 }, { "item": "water", "amount": 2 } ],
-        "outputs": [ { "item": "alumina", "amount": 2 } ],
-        "byproducts": [ { "item": "red_mud", "amount": 2 } ],
+        "inputs": [
+          {
+            "item": "crushed_bauxite",
+            "amount": 4
+          },
+          {
+            "item": "sodium_hydroxide",
+            "amount": 1
+          },
+          {
+            "item": "water",
+            "amount": 2
+          }
+        ],
+        "outputs": [
+          {
+            "item": "alumina",
+            "amount": 2
+          }
+        ],
+        "byproducts": [
+          {
+            "item": "red_mud",
+            "amount": 2
+          }
+        ],
         "note": "Red mud is hazardous waste; handling it is part of the hardcore loop."
       },
-      "related": ["bauxite", "alumina"]
+      "related": [
+        "bauxite",
+        "alumina"
+      ]
     },
     "hall_heroult_cell": {
       "id": "hall_heroult_cell",
       "type": "machine",
       "status": "planned",
       "tier": "early",
-      "name": { "en": "Hall-Heroult Cell", "ru": "Электролизёр Холла-Эру" },
+      "name": {
+        "en": "Hall-Heroult Cell",
+        "ru": "Электролизёр Холла-Эру"
+      },
       "description": {
         "en": "Electrolyses alumina dissolved in molten cryolite into aluminium metal. Huge continuous DC current.",
         "ru": "Электролизом разлагает глинозём, растворённый в расплавленном криолите, до металлического алюминия. Огромный постоянный ток."
       },
-      "tags": ["electrolysis", "aluminium", "energy-hungry"],
+      "tags": [
+        "electrolysis",
+        "aluminium",
+        "energy-hungry"
+      ],
       "realWorld": {
         "basis": "Hall-Heroult: molten cryolite bath ~950-980 C, 4-5 V, ~13-15 kWh per kg Al. Carbon anodes are consumed to CO2.",
         "source": "https://en.wikipedia.org/wiki/Hall%E2%80%93H%C3%A9roult_process"
       },
       "recipe": {
         "machine": "hall_heroult_cell",
-        "inputs": [ { "item": "alumina", "amount": 2 }, { "item": "cryolite", "amount": 1 }, { "item": "carbon_anode", "amount": 1 } ],
-        "outputs": [ { "item": "aluminum_ingot", "amount": 1 } ],
-        "byproducts": [ { "item": "carbon_dioxide", "amount": 1 } ],
+        "inputs": [
+          {
+            "item": "alumina",
+            "amount": 2
+          },
+          {
+            "item": "cryolite",
+            "amount": 1
+          },
+          {
+            "item": "carbon_anode",
+            "amount": 1
+          }
+        ],
+        "outputs": [
+          {
+            "item": "aluminum_ingot",
+            "amount": 1
+          }
+        ],
+        "byproducts": [
+          {
+            "item": "carbon_dioxide",
+            "amount": 1
+          }
+        ],
         "note": "The energy cost is the balancing lever: aluminium is cheap only at industrial scale."
       },
-      "related": ["alumina", "aluminum_ingot"]
+      "related": [
+        "alumina",
+        "aluminum_ingot"
+      ]
     },
     "kroll_reactor": {
       "id": "kroll_reactor",
       "type": "machine",
       "status": "planned",
       "tier": "mid",
-      "name": { "en": "Kroll Reactor", "ru": "Реактор Кролла" },
+      "name": {
+        "en": "Kroll Reactor",
+        "ru": "Реактор Кролла"
+      },
       "description": {
         "en": "Reduces TiCl4 vapour with molten magnesium under argon to make titanium sponge. Batch process, expensive.",
         "ru": "Восстанавливает пары TiCl4 расплавленным магнием в атмосфере аргона, давая титановую губку. Периодический и дорогой процесс."
       },
-      "tags": ["chemistry", "titanium", "batch"],
+      "tags": [
+        "chemistry",
+        "titanium",
+        "batch"
+      ],
       "realWorld": {
         "basis": "Kroll process: carbochlorination of ilmenite -> TiCl4, then Mg reduction ~800-1000 C under argon, then vacuum distillation.",
         "source": "https://en.wikipedia.org/wiki/Kroll_process"
       },
       "recipe": {
         "machine": "kroll_reactor",
-        "inputs": [ { "item": "titanium_tetrachloride", "amount": 1 }, { "item": "magnesium", "amount": 2 }, { "item": "argon", "amount": 1 } ],
-        "outputs": [ { "item": "titanium_sponge", "amount": 1 } ],
-        "byproducts": [ { "item": "magnesium_chloride", "amount": 2 } ],
+        "inputs": [
+          {
+            "item": "titanium_tetrachloride",
+            "amount": 1
+          },
+          {
+            "item": "magnesium",
+            "amount": 2
+          },
+          {
+            "item": "argon",
+            "amount": 1
+          }
+        ],
+        "outputs": [
+          {
+            "item": "titanium_sponge",
+            "amount": 1
+          }
+        ],
+        "byproducts": [
+          {
+            "item": "magnesium_chloride",
+            "amount": 2
+          }
+        ],
         "note": "Batch + argon + magnesium recycle loop explains titanium's high price."
       },
-      "related": ["ilmenite", "titanium"]
+      "related": [
+        "ilmenite",
+        "titanium"
+      ]
     },
     "water_electrolyzer": {
       "id": "water_electrolyzer",
       "type": "machine",
       "status": "planned",
       "tier": "early",
-      "name": { "en": "Water Electrolyzer", "ru": "Электролизёр воды" },
+      "name": {
+        "en": "Water Electrolyzer",
+        "ru": "Электролизёр воды"
+      },
       "description": {
         "en": "Splits water into hydrogen and oxygen. Core of life support (O2) and ISRU fuel production.",
         "ru": "Разлагает воду на водород и кислород. Основа жизнеобеспечения (O2) и ISRU-производства топлива."
       },
-      "tags": ["electrolysis", "life-support", "isru"],
+      "tags": [
+        "electrolysis",
+        "life-support",
+        "isru"
+      ],
       "realWorld": {
         "basis": "2 H2O -> 2 H2 + O2. Real efficiency ~50-70%; electrolysis is also how ISS can generate O2 (via water from the Sabatier loop).",
         "source": "https://en.wikipedia.org/wiki/Electrolysis_of_water"
       },
       "recipe": {
         "machine": "water_electrolyzer",
-        "inputs": [ { "item": "water", "amount": 2 } ],
-        "outputs": [ { "item": "hydrogen", "amount": 2 }, { "item": "oxygen", "amount": 1 } ],
+        "inputs": [
+          {
+            "item": "water",
+            "amount": 2
+          }
+        ],
+        "outputs": [
+          {
+            "item": "hydrogen",
+            "amount": 2
+          },
+          {
+            "item": "oxygen",
+            "amount": 1
+          }
+        ],
         "note": "Produces both propellants and breathing oxygen depending on the need."
       },
-      "related": ["oxygen", "hydrogen", "sabatier_reactor"]
+      "related": [
+        "oxygen",
+        "hydrogen",
+        "sabatier_reactor"
+      ]
     },
     "sabatier_reactor": {
       "id": "sabatier_reactor",
       "type": "machine",
       "status": "planned",
       "tier": "mid",
-      "name": { "en": "Sabatier Reactor", "ru": "Реактор Сабатье" },
+      "name": {
+        "en": "Sabatier Reactor",
+        "ru": "Реактор Сабатье"
+      },
       "description": {
         "en": "Recycles CO2 into methane and water. Core of closed-loop life support and Martian ISRU fuel production.",
         "ru": "Перерабатывает CO2 в метан и воду. Основа замкнутого жизнеобеспечения и марсианского ISRU-производства топлива."
       },
-      "tags": ["chemistry", "life-support", "isru"],
+      "tags": [
+        "chemistry",
+        "life-support",
+        "isru"
+      ],
       "realWorld": {
         "basis": "Sabatier reaction: CO2 + 4 H2 -> CH4 + 2 H2O over a nickel catalyst at ~300-400 C. Used on the ISS (ECLSS).",
         "source": "https://en.wikipedia.org/wiki/Sabatier_reaction"
       },
       "recipe": {
         "machine": "sabatier_reactor",
-        "inputs": [ { "item": "carbon_dioxide", "amount": 1 }, { "item": "hydrogen", "amount": 4 } ],
-        "outputs": [ { "item": "liquid_methane", "amount": 1 }, { "item": "water", "amount": 2 } ],
+        "inputs": [
+          {
+            "item": "carbon_dioxide",
+            "amount": 1
+          },
+          {
+            "item": "hydrogen",
+            "amount": 4
+          }
+        ],
+        "outputs": [
+          {
+            "item": "liquid_methane",
+            "amount": 1
+          },
+          {
+            "item": "water",
+            "amount": 2
+          }
+        ],
         "note": "Methane is liquefied downstream; water feeds the electrolyzer to close the loop."
       },
-      "related": ["water_electrolyzer", "liquid_methane"]
+      "related": [
+        "water_electrolyzer",
+        "liquid_methane"
+      ]
     },
     "blast_furnace": {
       "id": "blast_furnace",
       "type": "machine",
       "status": "planned",
       "tier": "early",
-      "name": { "en": "Blast Furnace", "ru": "Доменная печь" },
+      "name": {
+        "en": "Blast Furnace",
+        "ru": "Доменная печь"
+      },
       "description": {
         "en": "Reduces iron ore to pig iron with coke and limestone, then a basic oxygen furnace decarburises it into steel.",
         "ru": "Восстанавливает железную руду до чугуна коксом и известняком; затем кислородный конвертер обезуглероживает чугун в сталь."
       },
-      "tags": ["metallurgy", "iron", "high-temp"],
+      "tags": [
+        "metallurgy",
+        "iron",
+        "high-temp"
+      ],
       "realWorld": {
         "basis": "Blast furnace ~1600 C: Fe2O3 + 3 CO -> 2 Fe + 3 CO2. Steel = pig iron with carbon removed in the basic oxygen furnace.",
         "source": "https://en.wikipedia.org/wiki/Blast_furnace"
       },
       "recipe": {
         "machine": "blast_furnace",
-        "inputs": [ { "item": "iron_ore_concentrate", "amount": 3 }, { "item": "coke", "amount": 2 }, { "item": "limestone", "amount": 1 } ],
-        "outputs": [ { "item": "pig_iron", "amount": 2 } ],
-        "byproducts": [ { "item": "slag", "amount": 1 }, { "item": "carbon_dioxide", "amount": 1 } ],
+        "inputs": [
+          {
+            "item": "iron_ore_concentrate",
+            "amount": 3
+          },
+          {
+            "item": "coke",
+            "amount": 2
+          },
+          {
+            "item": "limestone",
+            "amount": 1
+          }
+        ],
+        "outputs": [
+          {
+            "item": "pig_iron",
+            "amount": 2
+          }
+        ],
+        "byproducts": [
+          {
+            "item": "slag",
+            "amount": 1
+          },
+          {
+            "item": "carbon_dioxide",
+            "amount": 1
+          }
+        ],
         "note": "Pig iron then goes to the basic oxygen furnace to become steel."
       },
-      "related": ["iron_ore_concentrate", "steel"]
+      "related": [
+        "iron_ore_concentrate",
+        "steel"
+      ]
     },
     "molten_salt_electrolyzer": {
       "id": "molten_salt_electrolyzer",
       "type": "machine",
       "status": "planned",
       "tier": "orbit",
-      "name": { "en": "Molten Salt Electrolyzer", "ru": "Электролизёр расплавленных солей" },
+      "name": {
+        "en": "Molten Salt Electrolyzer",
+        "ru": "Электролизёр расплавленных солей"
+      },
       "description": {
         "en": "Extracts oxygen (and metals) directly from regolith by molten-salt electrolysis. Key ISRU technology.",
         "ru": "Извлекает кислород (и металлы) прямо из реголита электролизом расплавленных солей. Ключевая технология ISRU."
       },
-      "tags": ["electrolysis", "isru", "moon"],
+      "tags": [
+        "electrolysis",
+        "isru",
+        "moon"
+      ],
       "realWorld": {
         "basis": "Fray-Farthing-Chen (FFC) process reduces metal oxides in molten CaCl2, releasing oxygen. Demonstrated on lunar regolith simulants.",
         "source": "https://en.wikipedia.org/wiki/FFC_Cambridge_process"
       },
       "recipe": {
         "machine": "molten_salt_electrolyzer",
-        "inputs": [ { "item": "regolith", "amount": 5 } ],
-        "outputs": [ { "item": "oxygen", "amount": 2 }, { "item": "metal_mix", "amount": 3 } ],
+        "inputs": [
+          {
+            "item": "regolith",
+            "amount": 5
+          }
+        ],
+        "outputs": [
+          {
+            "item": "oxygen",
+            "amount": 2
+          },
+          {
+            "item": "metal_mix",
+            "amount": 3
+          }
+        ],
         "note": "Oxygen is ~42% of lunar regolith by mass - the single biggest ISRU win."
       },
-      "related": ["regolith", "oxygen"]
+      "related": [
+        "regolith",
+        "oxygen"
+      ]
+    },
+    "ectogenesis": {
+      "id": "ectogenesis",
+      "type": "machine",
+      "status": "planned",
+      "tier": "mid",
+      "name": {
+        "en": "Artificial Womb (Ectogenesis)",
+        "ru": "Искусственная утроба (эктогенез)"
+      },
+      "description": {
+        "en": "Grows a human outside a body. The Rebirth faction's 'cradles': the machine at the heart of their slave program.",
+        "ru": "Выращивает человека вне тела. «Колыбели» фракции «Возрождение» — машина в сердце их рабовладельческой программы."
+      },
+      "tags": [
+        "biotech",
+        "lore",
+        "clone"
+      ],
+      "realWorld": {
+        "basis": "Ectogenesis is partially real: lamb fetuses were developed in 'biobag' artificial wombs (2017). Full-term human ectogenesis remains hypothetical.",
+        "source": "https://en.wikipedia.org/wiki/Artificial_womb",
+        "data": {
+          "status": "partial"
+        }
+      },
+      "related": [
+        "clone"
+      ]
     }
   }
 }
