@@ -30,9 +30,9 @@ import net.minecraft.world.level.levelgen.Heightmap;
  *       starter kit.</li>
  *   <li>The bunker itself is <b>not</b> generated — the player builds it. This
  *       class only guarantees a safe, sealed underground spawn cell.</li>
- *   <li>Mineshaft generation is disabled globally (see
- *       {@code data/minecraft/tags/worldgen/biome/has_structure/mineshaft*.json}),
- *       so no mineshaft can intersect the spawn area.</li>
+ *   <li>Mineshafts are left untouched. The bunker structure (provided by the
+ *       player) is placed at a spot checked to be mineshaft-free, so no
+ *       mineshaft intersects the spawn area.</li>
  * </ul>
  *
  * <p>Minecraft 1.21.5+ API notes: {@code ServerPlayer#serverLevel()} became
