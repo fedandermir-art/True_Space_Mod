@@ -28,8 +28,7 @@ import net.minecraft.world.level.levelgen.Heightmap;
  * replaced by {@code getRespawnData()}, so the bunker is instead centred on the
  * player's first position (= world spawn for a new player); NBT getters return
  * {@code Optional}, so first-login is tracked with {@code contains()} +
- * {@code putBoolean()}; {@code teleportTo} now takes an extra {@code setCamera}
- * boolean.
+ * {@code putBoolean()}; {@code teleportTo(x, y, z)} (no extra args in 21.11).
  */
 public final class SpawnBunker {
 
@@ -59,7 +58,7 @@ public final class SpawnBunker {
         // Wake the player inside the bunker exactly once.
         if (!player.getPersistentData().contains("truespace:spawned")) {
             BlockPos wake = chamber.north(); // beside the chamber, still inside
-            player.teleportTo(wake.getX() + 0.5, wake.getY(), wake.getZ() + 0.5, true);
+            player.teleportTo(wake.getX() + 0.5, wake.getY(), wake.getZ() + 0.5);
             player.getPersistentData().putBoolean("truespace:spawned", true);
             intro(player);
         }
