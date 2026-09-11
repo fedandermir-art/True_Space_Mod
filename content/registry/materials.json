@@ -1,0 +1,480 @@
+{
+  "category": "materials",
+  "description": "Ores, refined intermediates and metals. Every material carries real-world data (density, melting point, process) used both for balance and for in-game tooltips.",
+  "entries": {
+    "bauxite": {
+      "id": "bauxite",
+      "type": "material",
+      "status": "implemented",
+      "tier": "early",
+      "name": {
+        "en": "Bauxite Ore",
+        "ru": "Бокситовая руда"
+      },
+      "description": {
+        "en": "The principal aluminium ore: a mixture of hydrated aluminium oxides (gibbsite, boehmite, diaspore) with iron oxides, silica and titania.",
+        "ru": "Главная руда алюминия: смесь гидратированных оксидов алюминия (гиббсит, бёмит, диаспор) с оксидами железа, кремнезёмом и титаном."
+      },
+      "tags": [
+        "ore",
+        "aluminium",
+        "sedimentary"
+      ],
+      "realWorld": {
+        "basis": "Bauxite (~30-60% Al2O3). Roughly 4-5 t of bauxite -> 2 t of alumina -> 1 t of aluminium.",
+        "source": "https://en.wikipedia.org/wiki/Bauxite",
+        "data": {
+          "al2o3ContentPct": "30-60",
+          "densityKgM3": 2450
+        }
+      },
+      "recipe": {
+        "machine": "bayer_digester",
+        "inputs": [
+          {
+            "item": "bauxite",
+            "amount": 4
+          },
+          {
+            "item": "sodium_hydroxide",
+            "amount": 1
+          }
+        ],
+        "outputs": [
+          {
+            "item": "alumina",
+            "amount": 2
+          }
+        ],
+        "byproducts": [
+          {
+            "item": "red_mud",
+            "amount": 2
+          }
+        ],
+        "note": "Bayer process: hot NaOH digestion, precipitation, calcination. Red mud is a real hazardous by-product."
+      },
+      "related": [
+        "alumina",
+        "bayer_digester",
+        "bauxite_ore",
+        "crushed_bauxite"
+      ]
+    },
+    "alumina": {
+      "id": "alumina",
+      "type": "material",
+      "status": "implemented",
+      "tier": "early",
+      "name": {
+        "en": "Alumina (Al2O3)",
+        "ru": "Глинозём (Al2O3)"
+      },
+      "description": {
+        "en": "Refined aluminium oxide, the white powder electrolysed into aluminium metal.",
+        "ru": "Очищенный оксид алюминия — белый порошок, из которого электролизом получают металлический алюминий."
+      },
+      "tags": [
+        "oxide",
+        "intermediate",
+        "aluminium"
+      ],
+      "realWorld": {
+        "basis": "Al2O3, melting point 2072 C. Electrolysis feedstock for the Hall-Heroult process.",
+        "source": "https://en.wikipedia.org/wiki/Aluminium_oxide",
+        "data": {
+          "meltingPointC": 2072,
+          "densityKgM3": 3950
+        }
+      },
+      "recipe": {
+        "machine": "hall_heroult_cell",
+        "inputs": [
+          {
+            "item": "alumina",
+            "amount": 2
+          },
+          {
+            "item": "cryolite",
+            "amount": 1
+          },
+          {
+            "item": "carbon_anode",
+            "amount": 1
+          }
+        ],
+        "outputs": [
+          {
+            "item": "aluminum_ingot",
+            "amount": 1
+          }
+        ],
+        "byproducts": [
+          {
+            "item": "carbon_dioxide",
+            "amount": 1
+          }
+        ],
+        "note": "Hall-Heroult: dissolved in molten cryolite at ~950-980 C, DC current ~4-5 V. Real cost ~13-15 kWh per kg of Al."
+      },
+      "related": [
+        "bauxite",
+        "aluminum_ingot",
+        "hall_heroult_cell"
+      ]
+    },
+    "aluminum_ingot": {
+      "id": "aluminum_ingot",
+      "type": "material",
+      "status": "implemented",
+      "tier": "early",
+      "name": {
+        "en": "Aluminium Ingot",
+        "ru": "Алюминиевый слиток"
+      },
+      "description": {
+        "en": "Light, corrosion-resistant aerospace metal. The workhorse of aircraft and launch-vehicle structures.",
+        "ru": "Лёгкий, коррозионно-стойкий авиакосмический металл — основа конструкций самолётов и ракет."
+      },
+      "tags": [
+        "metal",
+        "structural",
+        "aerospace"
+      ],
+      "realWorld": {
+        "basis": "Aluminium, density 2700 kg/m3, melting 660.3 C. Alloys (2024, 6061, 7075) used throughout aerospace.",
+        "source": "https://en.wikipedia.org/wiki/Aluminium",
+        "data": {
+          "densityKgM3": 2700,
+          "meltingPointC": 660.3
+        }
+      },
+      "depends": [
+        "alumina",
+        "hall_heroult_cell"
+      ]
+    },
+    "ilmenite": {
+      "id": "ilmenite",
+      "type": "material",
+      "status": "planned",
+      "tier": "mid",
+      "name": {
+        "en": "Ilmenite Ore",
+        "ru": "Ильменитовая руда"
+      },
+      "description": {
+        "en": "Iron-titanium oxide (FeTiO3), the main titanium ore.",
+        "ru": "Оксид железа-титана (FeTiO3) — основная руда титана."
+      },
+      "tags": [
+        "ore",
+        "titanium"
+      ],
+      "realWorld": {
+        "basis": "FeTiO3, ~52.6% TiO2. Titanium is extracted via the Kroll process (chlorination to TiCl4, then Mg reduction).",
+        "source": "https://en.wikipedia.org/wiki/Ilmenite",
+        "data": {
+          "tio2ContentPct": 52.6,
+          "densityKgM3": 4700
+        }
+      },
+      "related": [
+        "titanium",
+        "kroll_reactor"
+      ]
+    },
+    "titanium": {
+      "id": "titanium",
+      "type": "material",
+      "status": "planned",
+      "tier": "mid",
+      "name": {
+        "en": "Titanium",
+        "ru": "Титан"
+      },
+      "description": {
+        "en": "High strength-to-weight ratio, corrosion resistance, high melting point. Expensive; used in airframes, engines and pressure vessels.",
+        "ru": "Высокая удельная прочность, стойкость к коррозии, высокая температура плавления. Дорогой; идёт на планеры, двигатели и баллоны давления."
+      },
+      "tags": [
+        "metal",
+        "aerospace",
+        "high-temp"
+      ],
+      "realWorld": {
+        "basis": "Ti, density 4506 kg/m3, melting 1668 C. Kroll process is why it is expensive (batch, energy-heavy, argon atmosphere).",
+        "source": "https://en.wikipedia.org/wiki/Titanium",
+        "data": {
+          "densityKgM3": 4506,
+          "meltingPointC": 1668
+        }
+      },
+      "depends": [
+        "ilmenite",
+        "kroll_reactor"
+      ]
+    },
+    "steel": {
+      "id": "steel",
+      "type": "material",
+      "status": "planned",
+      "tier": "early",
+      "name": {
+        "en": "Steel",
+        "ru": "Сталь"
+      },
+      "description": {
+        "en": "Iron-carbon alloy; the cheap structural backbone. Launch pads, gantries and tanks are built from it.",
+        "ru": "Сплав железа с углеродом; дешёвая структурная основа. Из стали строят стартовые площадки, фермы и баки."
+      },
+      "tags": [
+        "alloy",
+        "structural"
+      ],
+      "realWorld": {
+        "basis": "Iron 1538 C; carbon is reduced in the blast furnace, then decarburised in the basic oxygen furnace. Steel ~7850 kg/m3.",
+        "source": "https://en.wikipedia.org/wiki/Steel",
+        "data": {
+          "densityKgM3": 7850,
+          "meltingPointC": 1370
+        }
+      },
+      "depends": [
+        "iron_ore_concentrate",
+        "blast_furnace"
+      ]
+    },
+    "copper": {
+      "id": "copper",
+      "type": "material",
+      "status": "planned",
+      "tier": "early",
+      "name": {
+        "en": "Copper",
+        "ru": "Медь"
+      },
+      "description": {
+        "en": "Conductor for wiring, electromagnets and electronics. Refined to 99.99% by electrolysis.",
+        "ru": "Проводник для проводки, электромагнитов и электроники. Очищается до 99.99% электролизом."
+      },
+      "tags": [
+        "metal",
+        "conductor",
+        "electronics"
+      ],
+      "realWorld": {
+        "basis": "Cu, density 8960 kg/m3, melting 1085 C. Electrolytic refining yields 99.99% pure cathode copper.",
+        "source": "https://en.wikipedia.org/wiki/Copper",
+        "data": {
+          "densityKgM3": 8960,
+          "meltingPointC": 1085
+        }
+      }
+    },
+    "regolith": {
+      "id": "regolith",
+      "type": "material",
+      "status": "planned",
+      "tier": "orbit",
+      "name": {
+        "en": "Lunar Regolith",
+        "ru": "Лунный реголит"
+      },
+      "description": {
+        "en": "Loose surface rock of airless bodies. Feedstock for in-situ resource utilisation (ISRU): oxygen, metals, shielding and construction.",
+        "ru": "Рыхлый поверхностный грунт безатмосферных тел. Сырьё для ISRU: кислород, металлы, радиационная защита и строительство."
+      },
+      "tags": [
+        "raw",
+        "isru",
+        "moon"
+      ],
+      "realWorld": {
+        "basis": "Lunar regolith is ~40-45% O by mass (in oxides: SiO2, Al2O3, FeO, CaO). Oxygen is extractable by molten-salt electrolysis (e.g. Fray-Farthing-Chen process).",
+        "source": "https://en.wikipedia.org/wiki/Lunar_regolith",
+        "data": {
+          "oxygenByMassPct": 42
+        }
+      },
+      "related": [
+        "molten_salt_electrolyzer",
+        "oxygen"
+      ]
+    },
+    "iron_ore_concentrate": {
+      "id": "iron_ore_concentrate",
+      "type": "material",
+      "status": "planned",
+      "tier": "early",
+      "name": {
+        "en": "Iron Ore Concentrate",
+        "ru": "Железорудный концентрат"
+      },
+      "description": {
+        "en": "Beneficiated iron ore (mostly magnetite/hematite) ready for the blast furnace.",
+        "ru": "Обогащённая железная руда (в основном магнетит/гематит), готовая к доменной печи."
+      },
+      "tags": [
+        "ore",
+        "iron",
+        "beneficiated"
+      ],
+      "realWorld": {
+        "basis": "Magnetite Fe3O4 (~72.4% Fe) and hematite Fe2O3 (~70% Fe); concentrate typically >62% Fe after beneficiation.",
+        "source": "https://en.wikipedia.org/wiki/Iron_ore",
+        "data": {
+          "ironContentPct": 62
+        }
+      },
+      "related": [
+        "blast_furnace",
+        "steel"
+      ]
+    },
+    "primamateria": {
+      "id": "primamateria",
+      "type": "material",
+      "status": "planned",
+      "tier": "endgame",
+      "name": {
+        "en": "Prima Materia (Omega Isomer)",
+        "ru": "Праматерия (Омега-изомер)"
+      },
+      "description": {
+        "en": "Synthetic metastable nuclear isomer: a nucleus storing enormous energy, releasable on command. The one major speculative element of the lore (see docs/lore/tech.md). In its controlled mirror mode it catalyses transmutation of long-lived radionuclides into stable ones.",
+        "ru": "Синтетический метастабильный ядерный изомер: ядро, хранящее огромную энергию и отдающее её по команде. Единственное крупное фантастическое допущение лора (см. docs/lore/tech.md). В управляемом «зеркальном» режиме катализирует превращение долгоживущих радионуклидов в стабильные."
+      },
+      "tags": [
+        "lore",
+        "isomer",
+        "endgame",
+        "hypothetical"
+      ],
+      "realWorld": {
+        "basis": "Nuclear isomers are real (Ta-180m stable; Hf-178m2 ~2.4 MeV, 31 y, studied by DARPA). Prima Materia is a hypothetical synthetic isomer with far higher stored energy and external triggering.",
+        "source": "https://en.wikipedia.org/wiki/Nuclear_isomer",
+        "data": {
+          "status": "hypothetical",
+          "analogueIsomers": "Ta-180m, Hf-178m2"
+        }
+      }
+    },
+    "crushed_bauxite": {
+      "id": "crushed_bauxite",
+      "type": "material",
+      "status": "implemented",
+      "tier": "early",
+      "name": {
+        "en": "Crushed Bauxite",
+        "ru": "Дроблёный боксит"
+      },
+      "description": {
+        "en": "Bauxite reduced to size by the crusher — the first beneficiation step before Bayer digestion.",
+        "ru": "Боксит, измельчённый дробилкой — первый этап обогащения перед выщелачиванием по Байеру."
+      },
+      "tags": [
+        "intermediate",
+        "aluminium",
+        "beneficiated"
+      ],
+      "realWorld": {
+        "basis": "Comminution increases surface area for the Bayer process; real plants grind bauxite before NaOH digestion.",
+        "source": "https://en.wikipedia.org/wiki/Bayer_process"
+      },
+      "related": [
+        "bauxite",
+        "crusher",
+        "bayer_digester"
+      ]
+    },
+    "cryolite": {
+      "id": "cryolite",
+      "type": "material",
+      "status": "implemented",
+      "tier": "early",
+      "name": {
+        "en": "Cryolite",
+        "ru": "Криолит"
+      },
+      "description": {
+        "en": "Sodium hexafluoroaluminate (Na3AlF6): the molten salt that dissolves alumina in the Hall-Heroult cell.",
+        "ru": "Гексафторалюминат натрия (Na3AlF6): расплавленная соль, растворяющая глинозём в электролизёре Холла-Эру."
+      },
+      "tags": [
+        "salt",
+        "aluminium",
+        "flux"
+      ],
+      "realWorld": {
+        "basis": "Na3AlF6 melts ~1012 C; it is the electrolyte of the Hall-Heroult process (today mostly synthetic).",
+        "source": "https://en.wikipedia.org/wiki/Cryolite",
+        "data": {
+          "meltingPointC": 1012
+        }
+      },
+      "related": [
+        "hall_heroult_cell",
+        "alumina"
+      ]
+    },
+    "carbon_anode": {
+      "id": "carbon_anode",
+      "type": "material",
+      "status": "implemented",
+      "tier": "early",
+      "name": {
+        "en": "Carbon Anode",
+        "ru": "Угольный анод"
+      },
+      "description": {
+        "en": "Consumable graphite/coke electrode of the Hall-Heroult cell; it burns to CO2 during electrolysis.",
+        "ru": "Расходуемый графитовый/коксовый электрод электролизёра Холла-Эру; в процессе сгорает до CO2."
+      },
+      "tags": [
+        "electrode",
+        "carbon",
+        "consumable"
+      ],
+      "realWorld": {
+        "basis": "Anodes are consumed: 2 Al2O3 + 3 C -> 4 Al + 3 CO2. Roughly 0.4-0.5 t of anode carbon per tonne of aluminium.",
+        "source": "https://en.wikipedia.org/wiki/Hall%E2%80%93H%C3%A9roult_process",
+        "data": {
+          "consumptionKgPerKgAl": 0.45
+        }
+      },
+      "related": [
+        "hall_heroult_cell"
+      ]
+    },
+    "red_mud": {
+      "id": "red_mud",
+      "type": "material",
+      "status": "implemented",
+      "tier": "early",
+      "name": {
+        "en": "Red Mud",
+        "ru": "Красный шлам"
+      },
+      "description": {
+        "en": "Caustic, iron-rich by-product of the Bayer process. Hazardous waste that must be stored safely.",
+        "ru": "Едкий, богатый железом побочный продукт процесса Байера. Опасные отходы, требующие безопасного хранения."
+      },
+      "tags": [
+        "byproduct",
+        "hazardous",
+        "aluminium"
+      ],
+      "realWorld": {
+        "basis": "Real red mud (bauxite residue) is highly alkaline (pH 10-13) and stored in tailings dams; ~1-1.5 t per tonne of alumina.",
+        "source": "https://en.wikipedia.org/wiki/Red_mud",
+        "data": {
+          "ph": "10-13"
+        }
+      },
+      "related": [
+        "bayer_digester"
+      ]
+    }
+  }
+}

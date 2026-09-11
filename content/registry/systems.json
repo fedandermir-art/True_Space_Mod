@@ -1,0 +1,59 @@
+{
+  "category": "systems",
+  "description": "Cross-cutting game systems (power, pressure, heat...). Not single items, but the rules they follow.",
+  "entries": {
+    "electric_power": {
+      "id": "electric_power",
+      "type": "system",
+      "status": "designed",
+      "tier": "early",
+      "name": {
+        "en": "Electric Power",
+        "ru": "Электричество"
+      },
+      "description": {
+        "en": "Realistic electricity: voltage, current and power (P = V x I). Machines have real power draws and voltage requirements.",
+        "ru": "Реалистичное электричество: напряжение, ток и мощность (P = V × I). У машин реальные потребляемые мощности и требования по напряжению."
+      },
+      "tags": [
+        "power",
+        "electricity"
+      ],
+      "realWorld": {
+        "basis": "P = V * I. Real anchors: Hall-Heroult needs ~13-15 kWh per kg Al at ~4-5 V huge current; an ion thruster is power-limited, a home is ~kW, a launch pad ~MW.",
+        "source": "https://en.wikipedia.org/wiki/Electric_power"
+      },
+      "related": [
+        "hall_heroult_cell",
+        "water_electrolyzer",
+        "ion_engine"
+      ]
+    },
+    "cryo_spawn": {
+      "id": "cryo_spawn",
+      "type": "mechanic",
+      "status": "implemented",
+      "tier": "early",
+      "name": {
+        "en": "Cryo-Bunker Spawn",
+        "ru": "Спавн в крио-бункере"
+      },
+      "description": {
+        "en": "On first login the player wakes underground at world spawn inside a pre-carved, sealed safe cell. A chest holds the Caretaker's note and a starter kit. The bunker itself is built by the player and shipped as a structure file that the mod places at a mineshaft-free spot.",
+        "ru": "При первом входе игрок просыпается под землёй на спавне мира в заранее вырезанной и загерметизированной безопасной камере. В сундуке — записка «Смотрителя» и стартовый набор. Сам бункер строит игрок и передаёт как файл-структуру, которую мод размещает в месте без шахт поблизости."
+      },
+      "tags": [
+        "spawn",
+        "lore",
+        "story"
+      ],
+      "realWorld": {
+        "basis": "Gameplay translation of the lore beat 'the player wakes from cryosleep in a bunker' (docs/lore/story.md). The mod prepares a safe underground spawn cell, the Caretaker's note and a starter kit; the bunker structure itself is built by the player and shipped as a structure file. Its placement spot is checked to be mineshaft-free (mineshafts stay enabled elsewhere).",
+        "source": "https://github.com/fedandermir-art/True_Space_Mod/blob/arena/01a0783c-true-space-mod/docs/lore/story.md"
+      },
+      "related": [
+        "cryo_chamber"
+      ]
+    }
+  }
+}

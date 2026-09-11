@@ -1,0 +1,42 @@
+name: Build
+
+# Runs the REAL build (compiles the mod against Minecraft 1.21.11 + NeoForge)
+# on GitHub's runners. Activate by copying this file to .github/workflows/build.yml
+# (see ci/README.md for why it is not there yet).
+
+on:
+  push:
+    branches: [main, "arena/**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: "21"
+          distribution: temurin
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build with Gradle
+        run: ./gradlew build --no-daemon
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: truespace
+          path: build/libs/*.jar
+          if-no-files-found: error

@@ -1,0 +1,19 @@
+{
+  "block.truespace.bauxite_ore": "Бокситовая руда",
+  "block.truespace.cryo_chamber": "Криокамера",
+  "item.truespace.alumina": "Глинозём",
+  "item.truespace.aluminum_ingot": "Алюминиевый слиток",
+  "item.truespace.carbon_anode": "Угольный анод",
+  "item.truespace.crushed_bauxite": "Дроблёный боксит",
+  "item.truespace.cryolite": "Криолит",
+  "item.truespace.red_mud": "Красный шлам",
+  "itemGroup.truespace": "True Space",
+  "truespace.configuration.lifeSupport": "Жизнеобеспечение",
+  "truespace.configuration.radiation": "Ионизирующее излучение",
+  "truespace.configuration.realDataTooltips": "Показывать реальные данные в подсказках",
+  "truespace.configuration.realisticMaterials": "Реалистичные цепочки материалов",
+  "truespace.configuration.realisticRocketry": "Реалистичная ракетная физика",
+  "truespace.configuration.section.truespace.common.toml": "Настройки True Space Mod",
+  "truespace.configuration.section.truespace.common.toml.title": "Настройки True Space Mod",
+  "truespace.configuration.title": "Настройки True Space Mod"
+}

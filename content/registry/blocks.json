@@ -1,0 +1,62 @@
+{
+  "category": "blocks",
+  "description": "Placed blocks of the mod. Each carries its real-world basis and lore role.",
+  "entries": {
+    "bauxite_ore": {
+      "id": "bauxite_ore",
+      "type": "block",
+      "status": "implemented",
+      "tier": "early",
+      "name": {
+        "en": "Bauxite Ore",
+        "ru": "Бокситовая руда"
+      },
+      "description": {
+        "en": "Surface ore block of bauxite; mined with any pickaxe. The crusher reduces it to crushed bauxite.",
+        "ru": "Поверхностный рудный блок боксита; добывается любой киркой. Дробилка превращает его в дроблёный боксит."
+      },
+      "tags": [
+        "ore",
+        "aluminium",
+        "surface"
+      ],
+      "realWorld": {
+        "basis": "Bauxite is a surficial laterite formed by tropical weathering — hence near-surface generation in the mod.",
+        "source": "https://en.wikipedia.org/wiki/Bauxite"
+      },
+      "related": [
+        "bauxite",
+        "crusher"
+      ]
+    },
+    "cryo_chamber": {
+      "id": "cryo_chamber",
+      "type": "block",
+      "status": "implemented",
+      "tier": "early",
+      "name": {
+        "en": "Cryo Chamber",
+        "ru": "Криокамера"
+      },
+      "description": {
+        "en": "The chamber the player wakes from. Placed once at world spawn by the cryo-bunker. Based on vitrification cryonics.",
+        "ru": "Камера, из которой пробуждается игрок. Ставится один раз на спавне крио-бункером. Основана на крионике методом витрификации."
+      },
+      "tags": [
+        "lore",
+        "cryonics",
+        "spawn"
+      ],
+      "realWorld": {
+        "basis": "Vitrification (glass-state cryopreservation without ice crystals) is real; reversible whole-human cryosleep remains a hypothesis (see docs/lore/tech.md).",
+        "source": "https://en.wikipedia.org/wiki/Cryonics",
+        "data": {
+          "status": "real basis, hypothetical application"
+        }
+      },
+      "related": [
+        "cryo_spawn"
+      ]
+    }
+  }
+}

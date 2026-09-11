@@ -1,0 +1,80 @@
+# This is the neoforge.mods.toml file for the True Space Mod.
+# It contains the metadata relating to the loading of the mod.
+# There are several mandatory fields (#mandatory), and many more that are optional (#optional).
+# The overall format is standard TOML format, v0.5.0.
+# NOTE: placeholders in curly braces (mod_id, neo_version, ...) are filled in
+# by Gradle at build time from gradle.properties. Do not put literal dollar-brace
+# sequences in comments - the template engine evaluates them as Groovy code.
+
+# The license for your mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
+license="${mod_license}"
+
+# A URL to refer people to when problems occur with this mod
+issueTrackerURL="https://github.com/fedandermir-art/True_Space_Mod/issues" #optional
+
+# A list of mods - how many allowed here is determined by the individual mod loader
+[[mods]] #mandatory
+
+# The modid of the mod
+modId="${mod_id}" #mandatory
+
+# The version number of the mod
+version="${mod_version}" #mandatory
+
+# A display name for the mod
+displayName="${mod_name}" #mandatory
+
+# A URL for the "homepage" for this mod, displayed in the mod UI
+displayURL="https://github.com/fedandermir-art/True_Space_Mod" #optional
+
+# A file name (in the root of the mod JAR) containing a logo for display
+#logoFile="truespace.png" #optional
+
+# The authors of the mod, displayed in the mod UI (optional)
+authors="fedandermir-art"
+
+# The description text for the mod (multi line!) (#mandatory)
+description='''
+True Space Mod is a large, realistic hardcore space-exploration mod.
+
+Every system is grounded in real physics, chemistry and engineering:
+rocket engines with real propellant pairs and specific impulse, orbital
+mechanics with delta-v and the Tsiolkovsky rocket equation, life support
+(oxygen partial pressure, CO2 scrubbing, closed loops), ionizing radiation,
+and realistic ore-to-alloy production chains (beneficiation, electrolysis,
+the Bayer and Hall-Heroult processes, the Kroll process, and more).
+
+The world is dangerous: vacuum, cold, radiation and resource scarcity are
+not decorations - they are the core of the game.
+'''
+
+# The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
+#[[mixins]]
+#config="${mod_id}.mixins.json"
+
+# The [[accessTransformers]] block allows you to declare where your AT file is.
+# If this block is omitted, a fallback attempt will be made to load an AT from META-INF/accesstransformer.cfg
+#[[accessTransformers]]
+#file="META-INF/accesstransformer.cfg"
+
+# A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
+[[dependencies.${mod_id}]] #optional
+    # the modid of the dependency
+    modId="neoforge" #mandatory
+    # The type of the dependency. Can be one of "required", "optional", "incompatible" or "discouraged" (case insensitive).
+    type="required" #mandatory
+    # The version range of the dependency
+    versionRange="[${neo_version},)" #mandatory
+    # An ordering relationship for the dependency.
+    ordering="NONE"
+    # Side this dependency is applied on - BOTH, CLIENT, or SERVER
+    side="BOTH"
+
+# Here's another dependency
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    # This version range declares a minimum of the current minecraft version up to but not including the next major version
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"

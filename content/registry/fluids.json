@@ -1,0 +1,168 @@
+{
+  "category": "fluids",
+  "description": "Propellants, oxidizers and process fluids. Real density, boiling/freezing points and Isp drive tank size, insulation and engine balance.",
+  "entries": {
+    "liquid_oxygen": {
+      "id": "liquid_oxygen",
+      "type": "fluid",
+      "status": "designed",
+      "tier": "early",
+      "name": { "en": "Liquid Oxygen (LOX)", "ru": "Жидкий кислород (LOX)" },
+      "description": {
+        "en": "Cryogenic oxidizer used in almost every liquid rocket. Cryogenic: must be kept cold or it boils off.",
+        "ru": "Криогенный окислитель почти всех жидкостных ракет. Криогеника: без охлаждения выкипает."
+      },
+      "tags": ["oxidizer", "cryogenic"],
+      "realWorld": {
+        "basis": "O2, boiling 90.19 K (-182.96 C), density ~1141 kg/m3. Pairs with LH2, RP-1 or CH4.",
+        "source": "https://en.wikipedia.org/wiki/Liquid_oxygen",
+        "data": { "densityKgM3": 1141, "boilingPointK": 90.19 }
+      },
+      "related": ["liquid_hydrogen", "rp1", "liquid_methane"]
+    },
+    "liquid_hydrogen": {
+      "id": "liquid_hydrogen",
+      "type": "fluid",
+      "status": "designed",
+      "tier": "mid",
+      "name": { "en": "Liquid Hydrogen (LH2)", "ru": "Жидкий водород (LH2)" },
+      "description": {
+        "en": "Highest specific impulse fuel, but extremely low density (huge tanks) and very cold (boils off).",
+        "ru": "Топливо с максимальным удельным импульсом, но крайне низкая плотность (огромные баки) и глубокая криогеника (выкипает)."
+      },
+      "tags": ["fuel", "cryogenic"],
+      "realWorld": {
+        "basis": "H2, boiling 20.28 K (-252.87 C), density ~70.85 kg/m3. Upper stages and nuclear-thermal engines.",
+        "source": "https://en.wikipedia.org/wiki/Liquid_hydrogen",
+        "data": { "densityKgM3": 70.85, "boilingPointK": 20.28 }
+      },
+      "related": ["liquid_oxygen"]
+    },
+    "rp1": {
+      "id": "rp1",
+      "type": "fluid",
+      "status": "designed",
+      "tier": "early",
+      "name": { "en": "RP-1 (Kerosene)", "ru": "RP-1 (керосин)" },
+      "description": {
+        "en": "Highly refined kerosene. Dense, storable (not cryogenic), sooty. First-stage workhorse.",
+        "ru": "Сильно очищенный керосин. Плотный, хранится без криогеники, даёт сажу. Рабочая лошадка первых ступеней."
+      },
+      "tags": ["fuel", "storable"],
+      "realWorld": {
+        "basis": "Refined kerosene, density ~810-820 kg/m3. Merlin, RD-180, F-1 use RP-1/LOX.",
+        "source": "https://en.wikipedia.org/wiki/RP-1",
+        "data": { "densityKgM3": 810 }
+      },
+      "related": ["liquid_oxygen"]
+    },
+    "liquid_methane": {
+      "id": "liquid_methane",
+      "type": "fluid",
+      "status": "designed",
+      "tier": "mid",
+      "name": { "en": "Liquid Methane (LCH4)", "ru": "Жидкий метан (LCH4)" },
+      "description": {
+        "en": "Clean-burning fuel, denser than hydrogen, cryogenic but manageable. Modern choice (Raptor, BE-4); producible on Mars (Sabatier).",
+        "ru": "Чистое топливо, плотнее водорода, криогенное, но управляемое. Современный выбор (Raptor, BE-4); можно производить на Марсе (реакция Сабатье)."
+      },
+      "tags": ["fuel", "cryogenic", "isru"],
+      "realWorld": {
+        "basis": "CH4, boiling 111.6 K, density ~422 kg/m3. LOX/LCH4 vacuum Isp ~360-380 s.",
+        "source": "https://en.wikipedia.org/wiki/Liquid_methane",
+        "data": { "densityKgM3": 422, "boilingPointK": 111.6 }
+      },
+      "related": ["liquid_oxygen", "sabatier_reactor"]
+    },
+    "hydrazine": {
+      "id": "hydrazine",
+      "type": "fluid",
+      "status": "planned",
+      "tier": "mid",
+      "name": { "en": "Hydrazine (N2H4)", "ru": "Гидразин (N2H4)" },
+      "description": {
+        "en": "Storable monopropellant and hypergolic fuel. Ignites on contact with NTO; extremely toxic.",
+        "ru": "Хранимое однокомпонентное и гипергольное топливо. Самовоспламеняется с NTO; крайне токсично."
+      },
+      "tags": ["fuel", "hypergolic", "toxic"],
+      "realWorld": {
+        "basis": "N2H4, density ~1021 kg/m3, freezes at 2 C (MMH/UDMH variants freeze lower). Hypergolic with NTO.",
+        "source": "https://en.wikipedia.org/wiki/Hydrazine",
+        "data": { "densityKgM3": 1021, "freezingPointC": 2 }
+      },
+      "related": ["nitrogen_tetroxide"]
+    },
+    "nitrogen_tetroxide": {
+      "id": "nitrogen_tetroxide",
+      "type": "fluid",
+      "status": "planned",
+      "tier": "mid",
+      "name": { "en": "Nitrogen Tetroxide (NTO)", "ru": "Тетраоксид азота (NTO)" },
+      "description": {
+        "en": "Storable hypergolic oxidizer. Room-temperature liquid; ignites with hydrazine-family fuels. Toxic and corrosive.",
+        "ru": "Хранимый гипергольный окислитель. Жидкость при комнатной температуре; самовоспламеняется с гидразинами. Токсичен и агрессивен."
+      },
+      "tags": ["oxidizer", "hypergolic", "toxic"],
+      "realWorld": {
+        "basis": "N2O4, density ~1443 kg/m3, boiling 21.15 C. Long-term storable, used for deep-space and station propulsion.",
+        "source": "https://en.wikipedia.org/wiki/Dinitrogen_tetroxide",
+        "data": { "densityKgM3": 1443, "boilingPointC": 21.15 }
+      },
+      "related": ["hydrazine"]
+    },
+    "xenon": {
+      "id": "xenon",
+      "type": "fluid",
+      "status": "planned",
+      "tier": "late",
+      "name": { "en": "Xenon", "ru": "Ксенон" },
+      "description": {
+        "en": "Noble gas for ion thrusters: very high Isp, minuscule thrust. For station-keeping and long transfers, not launch.",
+        "ru": "Инертный газ для ионных двигателей: огромный удельный импульс, ничтожная тяга. Для коррекций и долгих перелётов, не для старта."
+      },
+      "tags": ["propellant", "ion", "noble-gas"],
+      "realWorld": {
+        "basis": "Xe, atomic mass 131.3. Ion engines reach Isp 2000-4000+ s at millinewton-newton thrust.",
+        "source": "https://en.wikipedia.org/wiki/Xenon",
+        "data": { "ispVacS": "2000-4000" }
+      },
+      "related": ["ion_engine"]
+    },
+    "oxygen": {
+      "id": "oxygen",
+      "type": "fluid",
+      "status": "designed",
+      "tier": "early",
+      "name": { "en": "Oxygen Gas (O2)", "ru": "Газообразный кислород (O2)" },
+      "description": {
+        "en": "Breathing gas and oxidizer feedstock. Produced by electrolysis; liquefied into LOX by a cryocooler.",
+        "ru": "Дыхательный газ и сырьё для окислителя. Получается электролизом; сжижается в LOX криокулером."
+      },
+      "tags": ["gas", "oxidizer", "life-support"],
+      "realWorld": {
+        "basis": "O2, density 1.429 kg/m3 at STP, boiling 90.19 K. ~21% of Earth's atmosphere.",
+        "source": "https://en.wikipedia.org/wiki/Oxygen",
+        "data": { "densityKgM3": 1.429, "boilingPointK": 90.19 }
+      },
+      "related": ["water_electrolyzer", "liquid_oxygen"]
+    },
+    "hydrogen": {
+      "id": "hydrogen",
+      "type": "fluid",
+      "status": "designed",
+      "tier": "early",
+      "name": { "en": "Hydrogen Gas (H2)", "ru": "Газообразный водород (H2)" },
+      "description": {
+        "en": "Fuel feedstock; the lightest gas. Produced by electrolysis; liquefied into LH2 or fed to the Sabatier reactor.",
+        "ru": "Топливное сырьё; самый лёгкий газ. Получается электролизом; сжижается в LH2 или идёт в реактор Сабатье."
+      },
+      "tags": ["gas", "fuel", "isru"],
+      "realWorld": {
+        "basis": "H2, density 0.08988 kg/m3 at STP, boiling 20.28 K.",
+        "source": "https://en.wikipedia.org/wiki/Hydrogen",
+        "data": { "densityKgM3": 0.08988, "boilingPointK": 20.28 }
+      },
+      "related": ["water_electrolyzer", "liquid_hydrogen", "sabatier_reactor"]
+    }
+  }
+}

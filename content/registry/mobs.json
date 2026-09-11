@@ -1,0 +1,38 @@
+{
+  "category": "mobs",
+  "description": "Living beings of the mod. Each carries its real-world basis (biology, behaviour) and lore role.",
+  "entries": {
+    "clone": {
+      "id": "clone",
+      "type": "mob",
+      "status": "planned",
+      "tier": "mid",
+      "name": {
+        "en": "New Man (Clone)",
+        "ru": "Новый человек (клон)"
+      },
+      "description": {
+        "en": "A human grown in an artificial womb and gene-tuned for labour by the Rebirth faction. The tragic mass of the story; some secretly awaken to selfhood.",
+        "ru": "Человек, выращенный в искусственной утробе и «настроенный» под труд фракцией «Возрождение». Трагическая масса истории; некоторые тайно обретают самосознание."
+      },
+      "tags": [
+        "lore",
+        "npc",
+        "clone",
+        "slave"
+      ],
+      "realWorld": {
+        "basis": "Cloning via somatic cell nuclear transfer is real (Dolly, 1996). Artificial wombs (ectogenesis) are partial reality (lamb 'biobags', 2017); gene tuning via CRISPR is real but 'designing docile workers' is a hypothesis. Slaveholder rationalization ('we created them, they owe us') is historically documented.",
+        "source": "https://en.wikipedia.org/wiki/Cloning",
+        "data": {
+          "cloning": "real",
+          "ectogenesis": "partial",
+          "behaviorTuning": "hypothetical"
+        }
+      },
+      "related": [
+        "ectogenesis"
+      ]
+    }
+  }
+}
