@@ -29,7 +29,8 @@ public final class ModBlocks {
 
     /**
      * The cryo-chamber the player wakes up in — the physical link between the
-     * lore (cryosleep) and the game world. Placed by {@link com.truespace.world.SpawnBunker}.
+     * lore (cryosleep) and the game world. Placed by the player when building
+     * their bunker (see {@link com.truespace.world.SpawnSite}).
      */
     public static final DeferredBlock<Block> CRYO_CHAMBER = BLOCKS.registerSimpleBlock(
             "cryo_chamber",

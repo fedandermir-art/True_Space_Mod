@@ -39,8 +39,8 @@
         "ru": "Спавн в крио-бункере"
       },
       "description": {
-        "en": "On the first login the player wakes inside a generated cryo-bunker at world spawn, with a starter kit and the opening journal (lore).",
-        "ru": "При первом входе игрок просыпается внутри сгенерированного крио-бункера на спавне мира, со стартовым набором и книгой-вступлением (лор)."
+        "en": "On first login the player wakes underground at world spawn inside a pre-carved, sealed safe cell. A chest holds the Caretaker's note and a starter kit. The bunker itself is player-built; mineshaft generation is disabled so the spawn area stays clear.",
+        "ru": "При первом входе игрок просыпается под землёй на спавне мира в заранее вырезанной и загерметизированной безопасной камере. В сундуке — записка «Смотрителя» и стартовый набор. Сам бункер строит игрок; генерация шахт отключена, чтобы район спавна был чистым."
       },
       "tags": [
         "spawn",
@@ -48,7 +48,7 @@
         "story"
       ],
       "realWorld": {
-        "basis": "Gameplay translation of the lore beat 'the player wakes from cryosleep in a bunker' (docs/lore/story.md).",
+        "basis": "Gameplay translation of the lore beat 'the player wakes from cryosleep in a bunker' (docs/lore/story.md). The mod only prepares a safe underground spawn cell, the Caretaker's note and a starter kit; the bunker structure itself is built by the player. Mineshaft biome tags are emptied so no mineshaft can intersect spawn.",
         "source": "https://github.com/fedandermir-art/True_Space_Mod/blob/arena/01a0783c-true-space-mod/docs/lore/story.md"
       },
       "related": [

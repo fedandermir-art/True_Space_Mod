@@ -20,13 +20,13 @@ public final class SpawnHandler {
     }
 
     /**
-     * On every login: make sure the cryo-bunker exists at world spawn and, on
-     * the player's very first login, wake them inside it.
+     * On every login: make sure the underground spawn cell exists at world spawn
+     * and, on the player's very first login, wake them inside it.
      */
     @SubscribeEvent
     public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
         if (event.getEntity() instanceof ServerPlayer player) {
-            SpawnBunker.ensure(player);
+            SpawnSite.setup(player);
         }
     }
 }
