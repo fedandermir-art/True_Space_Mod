@@ -2,7 +2,9 @@
 # It contains the metadata relating to the loading of the mod.
 # There are several mandatory fields (#mandatory), and many more that are optional (#optional).
 # The overall format is standard TOML format, v0.5.0.
-# Placeholder values (${...}) are expanded by Gradle at build time from gradle.properties.
+# NOTE: placeholders in curly braces (mod_id, neo_version, ...) are filled in
+# by Gradle at build time from gradle.properties. Do not put literal dollar-brace
+# sequences in comments - the template engine evaluates them as Groovy code.
 
 # The license for your mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
 license="${mod_license}"
