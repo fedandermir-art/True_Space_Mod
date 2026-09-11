@@ -14,20 +14,38 @@ import net.minecraft.data.recipes.RecipeProvider;
  * machine, <i>not</i> from a crafting table. Crafting-table recipes are only
  * for real assembly steps (parts into components).
  *
- * <p>No recipes are generated yet: the bauxite → aluminium chain is driven by
- * machines (crusher, Bayer digester, Hall-Héroult cell) that arrive with their
- * own recipe types in the next milestone. Any crafting-table recipe added here
- * from now on must be a real assembly step.
+ * <p>NeoForge 21.1 API: {@code RecipeProvider} is no longer a {@code DataProvider}.
+ * It is constructed with {@code (HolderLookup.Provider, RecipeOutput)} and its
+ * {@code buildRecipes()} takes no arguments (the output is a protected field).
+ * The inner {@code Runner} is the actual {@code DataProvider} registered with
+ * {@code GatherDataEvent}.
  */
 public class ModRecipeProvider extends RecipeProvider {
 
-    public ModRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
-        super(output, registries);
+    public ModRecipeProvider(HolderLookup.Provider registries, RecipeOutput output) {
+        super(registries, output);
     }
 
     @Override
-    protected void buildRecipes(RecipeOutput output) {
+    protected void buildRecipes() {
         // TODO(milestone): machine recipes (crusher, Bayer, Hall-Héroult) —
         // they need custom recipe types, which land together with the machines.
+    }
+
+    public static class Runner extends RecipeProvider.Runner {
+
+        public Runner(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
+            super(output, registries);
+        }
+
+        @Override
+        protected RecipeProvider createRecipeProvider(HolderLookup.Provider registries, RecipeOutput output) {
+            return new ModRecipeProvider(registries, output);
+        }
+
+        @Override
+        public String getName() {
+            return "True Space Recipes";
+        }
     }
 }

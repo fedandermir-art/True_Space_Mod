@@ -8,8 +8,12 @@ import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 
 /**
  * Game-bus events that tie the world to the lore.
+ *
+ * <p>NeoForge 21.1: {@code @EventBusSubscriber} no longer has a {@code bus}
+ * attribute — {@code PlayerLoggedInEvent} is not an {@code IModBusEvent}, so it
+ * is automatically registered to the game bus.
  */
-@EventBusSubscriber(modid = TrueSpaceMod.MODID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = TrueSpaceMod.MODID)
 public final class SpawnHandler {
 
     private SpawnHandler() {
