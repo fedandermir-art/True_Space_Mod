@@ -57,6 +57,9 @@ public final class ModItems {
     public static final DeferredItem<BlockItem> BAUXITE_ORE =
             ITEMS.registerSimpleBlockItem("bauxite_ore", ModBlocks.BAUXITE_ORE);
 
+    public static final DeferredItem<BlockItem> CRYO_CHAMBER =
+            ITEMS.registerSimpleBlockItem("cryo_chamber", ModBlocks.CRYO_CHAMBER);
+
     private ModItems() {
     }
 }

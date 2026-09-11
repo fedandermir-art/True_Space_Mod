@@ -31,6 +31,7 @@ public class ModLanguageProvider extends LanguageProvider {
 
         // Blocks
         add("block.truespace.bauxite_ore", "Bauxite Ore");
+        add("block.truespace.cryo_chamber", "Cryo Chamber");
 
         // Items
         add("item.truespace.aluminum_ingot", "Aluminium Ingot");
@@ -55,6 +56,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add("itemGroup.truespace", "True Space");
 
         add("block.truespace.bauxite_ore", "Бокситовая руда");
+        add("block.truespace.cryo_chamber", "Криокамера");
 
         add("item.truespace.aluminum_ingot", "Алюминиевый слиток");
         add("item.truespace.crushed_bauxite", "Дроблёный боксит");

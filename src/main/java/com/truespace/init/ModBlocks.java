@@ -27,6 +27,16 @@ public final class ModBlocks {
                     .strength(3.0f, 3.0f)
                     .sound(SoundType.STONE));
 
+    /**
+     * The cryo-chamber the player wakes up in — the physical link between the
+     * lore (cryosleep) and the game world. Placed by {@link com.truespace.world.SpawnBunker}.
+     */
+    public static final DeferredBlock<Block> CRYO_CHAMBER = BLOCKS.registerSimpleBlock(
+            "cryo_chamber",
+            p -> p.mapColor(MapColor.COLOR_GRAY)
+                    .strength(4.0f, 1200.0f)
+                    .sound(SoundType.METAL));
+
     private ModBlocks() {
     }
 }

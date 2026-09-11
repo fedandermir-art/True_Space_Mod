@@ -7,17 +7,53 @@
       "type": "system",
       "status": "designed",
       "tier": "early",
-      "name": { "en": "Electric Power", "ru": "Электричество" },
+      "name": {
+        "en": "Electric Power",
+        "ru": "Электричество"
+      },
       "description": {
         "en": "Realistic electricity: voltage, current and power (P = V x I). Machines have real power draws and voltage requirements.",
         "ru": "Реалистичное электричество: напряжение, ток и мощность (P = V × I). У машин реальные потребляемые мощности и требования по напряжению."
       },
-      "tags": ["power", "electricity"],
+      "tags": [
+        "power",
+        "electricity"
+      ],
       "realWorld": {
         "basis": "P = V * I. Real anchors: Hall-Heroult needs ~13-15 kWh per kg Al at ~4-5 V huge current; an ion thruster is power-limited, a home is ~kW, a launch pad ~MW.",
         "source": "https://en.wikipedia.org/wiki/Electric_power"
       },
-      "related": ["hall_heroult_cell", "water_electrolyzer", "ion_engine"]
+      "related": [
+        "hall_heroult_cell",
+        "water_electrolyzer",
+        "ion_engine"
+      ]
+    },
+    "cryo_spawn": {
+      "id": "cryo_spawn",
+      "type": "mechanic",
+      "status": "implemented",
+      "tier": "early",
+      "name": {
+        "en": "Cryo-Bunker Spawn",
+        "ru": "Спавн в крио-бункере"
+      },
+      "description": {
+        "en": "On the first login the player wakes inside a generated cryo-bunker at world spawn, with a starter kit and the opening journal (lore).",
+        "ru": "При первом входе игрок просыпается внутри сгенерированного крио-бункера на спавне мира, со стартовым набором и книгой-вступлением (лор)."
+      },
+      "tags": [
+        "spawn",
+        "lore",
+        "story"
+      ],
+      "realWorld": {
+        "basis": "Gameplay translation of the lore beat 'the player wakes from cryosleep in a bunker' (docs/lore/story.md).",
+        "source": "https://github.com/fedandermir-art/True_Space_Mod/blob/arena/01a0783c-true-space-mod/docs/lore/story.md"
+      },
+      "related": [
+        "cryo_chamber"
+      ]
     }
   }
 }

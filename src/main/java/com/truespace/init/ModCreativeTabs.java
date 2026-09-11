@@ -23,6 +23,8 @@ public final class ModCreativeTabs {
                     .withTabsBefore(CreativeModeTabs.COMBAT)
                     .icon(() -> ModItems.ALUMINUM_INGOT.get().getDefaultInstance())
                     .displayItems((parameters, output) -> {
+                        // Cryo-chamber: the starting centerpiece of the mod.
+                        output.accept(ModItems.CRYO_CHAMBER.get());
                         // Bauxite → aluminium chain, in processing order.
                         output.accept(ModBlocks.BAUXITE_ORE.get());
                         output.accept(ModItems.CRUSHED_BAUXITE.get());
