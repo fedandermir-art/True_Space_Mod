@@ -38,6 +38,18 @@ public final class ModBlocks {
                     .strength(4.0f, 1200.0f)
                     .sound(SoundType.METAL));
 
+    /**
+     * Striped steel wall panel, laboratory style. The building material for the
+     * player-built cryo-bunker (walls, door frames, etc.). Texture is generated
+     * by {@code tools/generate_textures.py}. Mined with a pickaxe, metal sounds.
+     */
+    public static final DeferredBlock<Block> LAB_PANEL = BLOCKS.registerSimpleBlock(
+            "lab_panel",
+            p -> p.mapColor(MapColor.COLOR_GRAY)
+                    .requiresCorrectToolForDrops()
+                    .strength(2.0f, 4.0f)
+                    .sound(SoundType.METAL));
+
     private ModBlocks() {
     }
 }

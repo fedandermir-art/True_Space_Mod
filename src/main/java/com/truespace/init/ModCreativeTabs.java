@@ -25,6 +25,8 @@ public final class ModCreativeTabs {
                     .displayItems((parameters, output) -> {
                         // Cryo-chamber: the starting centerpiece of the mod.
                         output.accept(ModItems.CRYO_CHAMBER.get());
+                        // Lab-style steel panel: the material the player builds their bunker from.
+                        output.accept(ModItems.LAB_PANEL.get());
                         // Bauxite → aluminium chain, in processing order.
                         output.accept(ModBlocks.BAUXITE_ORE.get());
                         output.accept(ModItems.CRUSHED_BAUXITE.get());

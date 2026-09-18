@@ -60,6 +60,10 @@ public final class ModItems {
     public static final DeferredItem<BlockItem> CRYO_CHAMBER =
             ITEMS.registerSimpleBlockItem("cryo_chamber", ModBlocks.CRYO_CHAMBER);
 
+    /** Building material for the player-built cryo-bunker. */
+    public static final DeferredItem<BlockItem> LAB_PANEL =
+            ITEMS.registerSimpleBlockItem("lab_panel", ModBlocks.LAB_PANEL);
+
     private ModItems() {
     }
 }

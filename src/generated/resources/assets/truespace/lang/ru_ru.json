@@ -1,6 +1,7 @@
 {
   "block.truespace.bauxite_ore": "Бокситовая руда",
   "block.truespace.cryo_chamber": "Криокамера",
+  "block.truespace.lab_panel": "Лабораторная панель",
   "item.truespace.alumina": "Глинозём",
   "item.truespace.aluminum_ingot": "Алюминиевый слиток",
   "item.truespace.carbon_anode": "Угольный анод",

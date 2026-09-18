@@ -39,8 +39,8 @@
         "ru": "Криокамера"
       },
       "description": {
-        "en": "The chamber the player wakes from. Placed once at world spawn by the cryo-bunker. Based on vitrification cryonics.",
-        "ru": "Камера, из которой пробуждается игрок. Ставится один раз на спавне крио-бункером. Основана на крионике методом витрификации."
+        "en": "The chamber the player wakes from cryosleep in. The player places it inside their own bunker; the mod teleports the player underground at world spawn on first login.",
+        "ru": "Камера, из которой игрок пробуждается из криосна. Игрок ставит её в своём бункере; мод телепортирует игрока под землю на спавн при первом входе."
       },
       "tags": [
         "lore",
@@ -56,6 +56,33 @@
       },
       "related": [
         "cryo_spawn"
+      ]
+    },
+    "lab_panel": {
+      "id": "lab_panel",
+      "type": "block",
+      "status": "implemented",
+      "tier": "early",
+      "name": {
+        "en": "Lab Panel",
+        "ru": "Лабораторная панель"
+      },
+      "description": {
+        "en": "Striped riveted steel wall panel, laboratory style. The building material for the player-built cryo-bunker.",
+        "ru": "Полосатая заклёпанная стальная настенная панель в лабораторном стиле. Стройматериал для бункера, который строит игрок."
+      },
+      "tags": [
+        "building",
+        "metal",
+        "bunker"
+      ],
+      "realWorld": {
+        "basis": "Riveted steel wall cladding is a standard finish for laboratory and industrial buildings; the striped rib pattern matches real modular panel systems.",
+        "source": "https://en.wikipedia.org/wiki/Cladding_(building)"
+      },
+      "related": [
+        "cryo_spawn",
+        "cryo_chamber"
       ]
     }
   }

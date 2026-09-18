@@ -3,7 +3,7 @@
   "categories": {
     "blocks": {
       "file": "blocks.json",
-      "count": 2
+      "count": 3
     },
     "components": {
       "file": "components.json",
@@ -31,10 +31,10 @@
     }
   },
   "status": {
-    "implemented": 10,
+    "implemented": 11,
     "designed": 7,
     "planned": 21,
     "placeholder": 0
   },
-  "total": 38
+  "total": 39
 }
