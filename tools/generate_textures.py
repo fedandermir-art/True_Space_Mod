@@ -104,9 +104,66 @@ def gen_lab_panel(seed: int = 42) -> list[list[tuple[int, int, int, int]]]:
     return img
 
 
+def gen_bunker_white_iron(seed: int = 1337) -> list[list[tuple[int, int, int, int]]]:
+    """White striped iron bunker panel — как железо в полоску, белая.
+
+    Идея от пользователя: белая, как железо, в полоску.
+    Layout 16px: 4 вертикальные пластины по 4px:
+      - 1px шов (темно-серый)
+      - 3px белая пластина с чередованием яркости (полоска)
+      - заклепки сверху/снизу
+      - легкий градиент сверху светлее
+    """
+    rng = random.Random(seed)
+    # Шов — средне-серый, как у железа
+    seam = (170, 172, 178)
+    # Белые пластины — чередование яркая/темнее = полоска
+    plate_bases = [
+        (242, 242, 245),  # почти белая
+        (210, 212, 218),  # светло-серая (полоска)
+        (238, 238, 242),  # белая чуть темнее
+        (205, 207, 213),  # серая полоска
+    ]
+    # Заклепки — чуть темнее белого, с бликом
+    rivet = [(255, 255, 255), (225, 227, 232), (190, 192, 198), (150, 152, 160)]
+
+    img: list[list[tuple[int, int, int, int]]] = []
+    for y in range(SIZE):
+        grad = 18 - 36 * (y / (SIZE - 1))  # светлее сверху
+        row: list[tuple[int, int, int, int]] = []
+        for x in range(SIZE):
+            plate = x // 4
+            sx = x % 4
+            if sx == 0:
+                c = seam
+            else:
+                base = plate_bases[plate]
+                # Левая кромка светлее, правая темнее — объем
+                col_off = (-8, 10, -12)[sx - 1]
+                c = tuple(int(b + grad + col_off) for b in base)
+                # Заклепки в середине пластин, сверху и снизу
+                if sx in (1, 2) and (y in (1, 2) or y in (13, 14)):
+                    idx = (0 if y == 1 else 2) + (0 if sx == 1 else 1)
+                    c = rivet[idx]
+            # Легкий шум как у железа
+            j = rng.randint(-7, 7)
+            row.append((_clamp(c[0] + j), _clamp(c[1] + j), _clamp(c[2] + j), 255))
+        img.append(row)
+
+    # Царапины как у железа — белые блики
+    for _ in range(8):
+        x = rng.randint(1, SIZE - 2)
+        y = rng.randint(3, 13)
+        r, g, b, a = img[y][x]
+        img[y][x] = (_clamp(r + 18), _clamp(g + 18), _clamp(b + 18), a)
+    return img
+
+
 def main() -> None:
     write_png(TEXTURE_DIR / "lab_panel.png", gen_lab_panel())
     print(f"wrote {TEXTURE_DIR / 'lab_panel.png'}")
+    write_png(TEXTURE_DIR / "bunker_white_iron.png", gen_bunker_white_iron())
+    print(f"wrote {TEXTURE_DIR / 'bunker_white_iron.png'}")
 
 
 if __name__ == "__main__":

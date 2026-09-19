@@ -14,12 +14,6 @@ public final class ModBlocks {
 
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(TrueSpaceMod.MODID);
 
-    /**
-     * Bauxite is a surficial laterite ore (formed by tropical weathering), so it
-     * generates near the surface — see the worldgen files under
-     * {@code src/main/resources/data/truespace/worldgen/}.
-     * Mined with any pickaxe (no tier requirement).
-     */
     public static final DeferredBlock<Block> BAUXITE_ORE = BLOCKS.registerSimpleBlock(
             "bauxite_ore",
             p -> p.mapColor(MapColor.TERRACOTTA_RED)
@@ -27,27 +21,29 @@ public final class ModBlocks {
                     .strength(3.0f, 3.0f)
                     .sound(SoundType.STONE));
 
-    /**
-     * The cryo-chamber the player wakes up in — the physical link between the
-     * lore (cryosleep) and the game world. Placed by the player when building
-     * their bunker (see {@link com.truespace.world.SpawnSite}).
-     */
     public static final DeferredBlock<Block> CRYO_CHAMBER = BLOCKS.registerSimpleBlock(
             "cryo_chamber",
             p -> p.mapColor(MapColor.COLOR_GRAY)
                     .strength(4.0f, 1200.0f)
                     .sound(SoundType.METAL));
 
-    /**
-     * Striped steel wall panel, laboratory style. The building material for the
-     * player-built cryo-bunker (walls, door frames, etc.). Texture is generated
-     * by {@code tools/generate_textures.py}. Mined with a pickaxe, metal sounds.
-     */
     public static final DeferredBlock<Block> LAB_PANEL = BLOCKS.registerSimpleBlock(
             "lab_panel",
             p -> p.mapColor(MapColor.COLOR_GRAY)
                     .requiresCorrectToolForDrops()
                     .strength(2.0f, 4.0f)
+                    .sound(SoundType.METAL));
+
+    /**
+     * White striped iron bunker panel — белая полосатая как железо, для бункера.
+     * Текстура сгенерирована tools/generate_textures.py (seed 1337).
+     * Запрос от пользователя: "как железо в полоску белая"
+     */
+    public static final DeferredBlock<Block> BUNKER_WHITE_IRON = BLOCKS.registerSimpleBlock(
+            "bunker_white_iron",
+            p -> p.mapColor(MapColor.SNOW)
+                    .requiresCorrectToolForDrops()
+                    .strength(2.5f, 6.0f)
                     .sound(SoundType.METAL));
 
     private ModBlocks() {

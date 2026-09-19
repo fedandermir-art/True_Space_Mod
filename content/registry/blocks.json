@@ -84,6 +84,34 @@
         "cryo_spawn",
         "cryo_chamber"
       ]
+    },
+    "bunker_white_iron": {
+      "id": "bunker_white_iron",
+      "type": "block",
+      "status": "implemented",
+      "tier": "early",
+      "name": {
+        "en": "White Iron Bunker Panel",
+        "ru": "Белая железная панель бункера"
+      },
+      "description": {
+        "en": "White striped iron wall panel, clean laboratory style for bunker interior. User request: white like iron in stripes.",
+        "ru": "Белая полосатая железная стеновая панель, чистый лабораторный стиль для интерьера бункера. Запрос пользователя: как железо в полоску белая."
+      },
+      "tags": [
+        "building",
+        "metal",
+        "bunker",
+        "white"
+      ],
+      "realWorld": {
+        "basis": "White powder-coated steel panels with ribbed profile are standard for cleanrooms and laboratories; white finish improves light reflectance.",
+        "source": "https://en.wikipedia.org/wiki/Cladding_(building)"
+      },
+      "related": [
+        "lab_panel",
+        "cryo_chamber"
+      ]
     }
   }
 }
